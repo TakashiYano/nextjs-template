@@ -20,7 +20,7 @@ module.exports = {
     "prefer-arrow-callback": "error",
     "func-style": ["error", "expression"],
     "arrow-body-style": ["error", "always"],
-    "no-restricted-imports": ["error", { paths: [{ name: "react", importNames: ["default"] }] }],
+    // "no-restricted-imports": ["error", { paths: [{ name: "react", importNames: ["default"] }] }],
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/display-name": "error",

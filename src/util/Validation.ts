@@ -8,7 +8,7 @@ const usernameValidation = (username: string): string => {
 const emailValidation = (email: string): string => {
   if (!email) return "メールアドレスを入力してください";
 
-  const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const regex = /^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   if (!regex.test(email)) return "正しい形式でメールアドレスを入力してください";
 
   return "";
@@ -18,8 +18,7 @@ const passwordValidation = (password: string): string => {
   if (!password) return "パスワードを入力してください";
 
   const regex = /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,}$/i;
-  if (!regex.test(password))
-    return "パスワードは半角英数字をそれぞれ1種類以上含む8文字以上で入力してください";
+  if (!regex.test(password)) return "パスワードは半角英数字をそれぞれ1種類以上含む8文字以上で入力してください";
 
   return "";
 };

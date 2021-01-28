@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { Footer } from "src/components/footer";
 import { AuthHeader } from "src/components/auth-header";
+import { Footer } from "src/components/footer";
 
 export const AuthLayout = (props: { children: ReactNode }) => {
   return (

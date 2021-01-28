@@ -3,7 +3,5 @@ module.exports = {
   darkMode: "class", // 'media' or 'class'
   theme: { extend: {} },
   variants: { extend: {} },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [require("@tailwindcss/forms")],
 };

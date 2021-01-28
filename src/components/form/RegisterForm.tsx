@@ -1,8 +1,8 @@
-import * as React from "react";
 import Link from "next/link";
+import * as React from "react";
 import { Validation } from "src/util/Validation";
 
-export function RegisterForm() {
+export const RegisterForm = () => {
   const [info, setInfo] = React.useState({
     username: "",
     email: "",
@@ -38,12 +38,8 @@ export function RegisterForm() {
     return validInfo || validMessage || !loading;
   };
   const submit = () => {
-    setLoading({
-      loading: true,
-    });
-    setLoading({
-      loading: false,
-    });
+    setLoading(true);
+    setLoading(false);
   };
   return (
     <form className="grid grid-cols-1 gap-6 m-16">
@@ -57,9 +53,7 @@ export function RegisterForm() {
           placeholder=""
           onChange={handleChange}
         />
-        {message.username && (
-          <p style={{ color: "red", fontSize: 16 }}>{message.username}</p>
-        )}
+        {message.username && <p style={{ color: "red", fontSize: 16 }}>{message.username}</p>}
       </label>
       <label className="block">
         <span className="text-gray-700">メールアドレス*</span>
@@ -71,9 +65,7 @@ export function RegisterForm() {
           placeholder="example@gmail.com"
           onChange={handleChange}
         />
-        {message.email && (
-          <p style={{ color: "red", fontSize: 16 }}>{message.email}</p>
-        )}
+        {message.email && <p style={{ color: "red", fontSize: 16 }}>{message.email}</p>}
       </label>
       <label className="block">
         <span className="text-gray-700">パスワード*</span>
@@ -85,9 +77,7 @@ export function RegisterForm() {
           placeholder=""
           onChange={handleChange}
         />
-        {message.password && (
-          <p style={{ color: "red", fontSize: 16 }}>{message.password}</p>
-        )}
+        {message.password && <p style={{ color: "red", fontSize: 16 }}>{message.password}</p>}
       </label>
       <button
         className="bg-blue-500 hover:bg-blue-700 text-white dark:text-gray-700 font-bold py-2 px-4 rounded"
@@ -112,4 +102,4 @@ export function RegisterForm() {
       </span>
     </form>
   );
-}
+};

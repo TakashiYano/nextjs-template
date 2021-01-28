@@ -7,7 +7,7 @@ const items = [
   { href: "/", label: "お問い合わせ" },
 ];
 
-export function Footer(): JSX.Element {
+export const Footer = (): JSX.Element => {
   return (
     <footer className="bg-white pt-10 h-80 dark:bg-gray-800">
       <div className="pl-5 md:my-0 md:mx-auto" style={{ maxWidth: "760px", minWidth: "420px" }}>
@@ -17,19 +17,21 @@ export function Footer(): JSX.Element {
           </Link>
         </h1>
         <ul>
-          {items.map(({ href, label }) => (
-            <li key={label} className="mt-4 dark:text-white">
-              {label === "お問い合わせ" ? (
-                <a target="_blank" rel="noopener noreferrer" href={href}>
-                  {label}
-                </a>
-              ) : (
-                <Link href={href}>
-                  <a>{label}</a>
-                </Link>
-              )}
-            </li>
-          ))}
+          {items.map(({ href, label }) => {
+            return (
+              <li key={label} className="mt-4 dark:text-white">
+                {label === "お問い合わせ" ? (
+                  <a target="_blank" rel="noopener noreferrer" href={href}>
+                    {label}
+                  </a>
+                ) : (
+                  <Link href={href}>
+                    <a>{label}</a>
+                  </Link>
+                )}
+              </li>
+            );
+          })}
         </ul>
         <div className="mt-8">
           <small className="text-gray-800 dark:text-white" lang="en">

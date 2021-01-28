@@ -39,7 +39,7 @@ export const Header = () => {
           </Link>
         </div>
       </div>
-      <nav className="mt-3">
+      <nav className="md:my-0 md:mx-auto" style={{ maxWidth: 720 }}>
         {items.map(({ href, label }) => {
           return (
             <Link key={href} href={href}>

@@ -12,9 +12,6 @@ export function LoginForm() {
     message: "",
   });
   const [loading, setLoading] = React.useState(false);
-  const printValues = (e) => {
-    e.preventDefault();
-  };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const key = e.target.name;
     const value = e.target.value;
@@ -47,7 +44,7 @@ export function LoginForm() {
     });
   };
   return (
-    <form onSubmit={printValues} className="grid grid-cols-1 gap-6 m-16">
+    <form className="grid grid-cols-1 gap-6 m-16">
       <label className="block">
         <span className="text-gray-700">メールアドレス*</span>
         <input

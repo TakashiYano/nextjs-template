@@ -24,7 +24,7 @@ const passwordValidation = (password: string): string => {
   return "";
 };
 
-class Validation {
+export class Validation {
   static formValidate = (type: string, value: string) => {
     switch (type) {
       case "username":
@@ -36,5 +36,3 @@ class Validation {
     }
   };
 }
-
-export default Validation;

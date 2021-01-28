@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { AuthLayout } from "src/components/auth-layout";
-import RegisterForm from "src/components/form/RegisterForm";
+import { RegisterForm } from "src/components/form/RegisterForm";
 
 const SignUpPage = () => {
   return (

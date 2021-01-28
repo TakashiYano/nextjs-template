@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { AuthLayout } from "src/components/auth-layout";
-import LoginForm from "src/components/form/LoginForm";
+import { LoginForm } from "src/components/form/LoginForm";
 
 const SignInPage = () => {
   return (

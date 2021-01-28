@@ -9,7 +9,7 @@ export const LoginForm = () => {
   });
   const [message, setMessage] = React.useState({
     email: "",
-    message: "",
+    password: "",
   });
   const [loading, setLoading] = React.useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

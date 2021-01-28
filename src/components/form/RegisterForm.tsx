@@ -11,7 +11,7 @@ export const RegisterForm = () => {
   const [message, setMessage] = React.useState({
     username: "",
     email: "",
-    message: "",
+    password: "",
   });
   const [loading, setLoading] = React.useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

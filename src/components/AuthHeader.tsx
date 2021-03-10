@@ -1,11 +1,26 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Button } from "src/components/Button";
 
 export const Header = () => {
+  const router = useRouter();
+  const [pastSplash, setPastSplash] = useState("");
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  const handleScroll = () => {
+    if (window.scrollY > Math.round(window.innerHeight / 13)) {
+      setPastSplash("fixed w-full z-50 px-5 md:px-10 border-b dark:border-gray-500 top-0 left-0");
+    } else {
+      setPastSplash("");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   // After mounting, we have access to the theme
   useEffect(() => {
@@ -74,6 +89,28 @@ export const Header = () => {
             Login
           </Button>
         </div>
+      </div>
+      <div className="px-5 border-b dark:border-gray-900 md:px-10">
+        <nav className={`bg-white dark:bg-gray-800 ${pastSplash}`}>
+          <Link key="/" href="/">
+            <a
+              className={`hover:text-green-400 font-bold py-2 mr-7 ${
+                router.pathname == "/" ? "text-green-400 border-b-2 border-green-400" : "text-gray-400"
+              }`}
+            >
+              Home
+            </a>
+          </Link>
+          <Link key="/about" href="/about">
+            <a
+              className={`hover:text-green-400 font-bold py-2 mr-7 inline-block ${
+                router.pathname == "/about" ? "text-green-400 border-b-2 border-green-400" : "text-gray-400"
+              }`}
+            >
+              About
+            </a>
+          </Link>
+        </nav>
       </div>
     </header>
   );

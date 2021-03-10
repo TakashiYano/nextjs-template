@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
+import { Header } from "src/components/AuthHeader";
 import { Footer } from "src/components/Footer";
-import { Header } from "src/components/header";
 
-export const Layout = (props: { children: ReactNode }) => {
+export const AuthLayout = (props: { children: ReactNode }) => {
   return (
     <>
       <Header />

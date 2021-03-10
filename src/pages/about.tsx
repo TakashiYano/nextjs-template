@@ -1,20 +1,21 @@
 import Head from "next/head";
-import { Layout } from "src/components/layout";
-import { ClsxSample } from "src/components/sample/clsxSample";
+import { AuthLayout } from "src/components/AuthLayout";
+import { Dropdown } from "src/components/Dropdown";
 
 const About = () => {
   return (
-    <Layout>
+    <AuthLayout>
       <Head>
         <title>About</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="pt-6 md:my-0 md:mx-auto" style={{ maxWidth: 720, minWidth: 420 }}>
-        <h2 className="text-gray-800 dark:text-white">About</h2>
-        <ClsxSample>clsxサンプル</ClsxSample>
-        <ClsxSample bold>clsxサンプル(propsに応じてスタイル変更)</ClsxSample>
+      <div className="flex items-center justify-between px-5 py-8 md:px-10">
+        <h2 className="dark:text-white">About</h2>
+        <div>
+          <Dropdown label="Options" />
+        </div>
       </div>
-    </Layout>
+    </AuthLayout>
   );
 };
 

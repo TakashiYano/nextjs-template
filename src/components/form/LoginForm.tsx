@@ -1,5 +1,5 @@
-import Link from "next/link";
 import * as React from "react";
+import { Button } from "src/components/Button";
 import { Validation } from "src/util/Validation";
 
 export const LoginForm = () => {
@@ -40,52 +40,47 @@ export const LoginForm = () => {
     setLoading(false);
   };
   return (
-    <form className="grid grid-cols-1 gap-6 m-16">
-      <label className="block">
-        <span className="text-gray-700">メールアドレス*</span>
-        <input
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          name="email"
-          type="text"
-          value={info.email}
-          placeholder="example@gmail.com"
-          onChange={handleChange}
-        />
-        {message.email && <p style={{ color: "red", fontSize: 16 }}>{message.email}</p>}
-      </label>
-      <label className="block">
-        <span className="text-gray-700">パスワード*</span>
-        <input
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          name="password"
-          type="password"
-          value={info.password}
-          placeholder=""
-          onChange={handleChange}
-        />
-        {message.password && <p style={{ color: "red", fontSize: 16 }}>{message.password}</p>}
-      </label>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white dark:text-gray-700 font-bold py-2 px-4 rounded"
-        type="submit"
-        disabled={!canSubmit}
-        onClick={submit}
-      >
-        ログイン
-      </button>
-      <span className="text-center text-gray-700">または</span>
-      <button
-        className="bg-blue-200 hover:bg-blue-400 text-gray-700 font-bold py-2 px-4 rounded"
-        type="submit"
-        onClick={submit}
-      >
-        Twitterでログイン
-      </button>
-      <span className="text-center">
-        <Link href="/sign_up">
-          <a className="text-blue-700 dark:text-blue-500">会員登録ページへ</a>
-        </Link>
-      </span>
+    <form>
+      <div className="px-4 py-2 mt-8 bg-white dark:bg-gray-400">
+        <div>
+          <div>メールアドレス*</div>
+          {message.email && <span className="ml-2 text-xs text-red-500">{message.email}</span>}
+          <input
+            className="block w-full mt-1 border-none rounded-md focus:ring focus:ring-green-200 focus:ring-opacity-50 dark:bg-gray-400"
+            name="email"
+            type="text"
+            value={info.email}
+            placeholder="メールアドレスを入力"
+            onChange={handleChange}
+          />
+        </div>
+        <hr className="my-2" />
+        <div className="block">
+          <div>パスワード*</div>
+          {message.password && <span className="ml-2 text-xs text-red-500">{message.password}</span>}
+          <input
+            className="block w-full mt-1 border-none rounded-md focus:ring focus:ring-green-200 focus:ring-opacity-50 dark:bg-gray-400"
+            name="password"
+            type="password"
+            value={info.password}
+            placeholder="半角英数字をそれぞれ1種類以上含む6文字以上"
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+      <Button button variant="link" className="mt-2 ml-4 text-base">
+        パスワードを表示する
+      </Button>
+      <div className="mx-4 mt-5">
+        <button
+          className="w-full px-4 py-2 font-bold text-white bg-green-400 rounded-xl hover:bg-green-500"
+          type="submit"
+          disabled={!canSubmit}
+          onClick={submit}
+        >
+          ログイン
+        </button>
+      </div>
     </form>
   );
 };

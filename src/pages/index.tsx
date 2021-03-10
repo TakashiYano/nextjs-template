@@ -1,25 +1,28 @@
 import Head from "next/head";
-import { Layout } from "src/components/layout";
+import { AuthLayout } from "src/components/AuthLayout";
+import { Button } from "src/components/Button";
 
 const Home = () => {
   return (
-    <Layout>
+    <AuthLayout>
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="pt-6 md:my-0 md:mx-auto" style={{ maxWidth: 720, minWidth: 420 }}>
-        <h2 className="text-gray-800 dark:text-white">Home</h2>
-        <button
-          className="text-gray-800 dark:text-white"
+      <div className="px-5 py-8 md:px-10">
+        <h2 className="dark:text-white">Home</h2>
+        <Button
+          className="px-5 py-2 font-bold"
+          variant="outline"
+          button
           onClick={() => {
             window.alert("Hello, World!");
           }}
         >
           Button
-        </button>
+        </Button>
       </div>
-    </Layout>
+    </AuthLayout>
   );
 };
 

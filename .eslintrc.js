@@ -13,6 +13,7 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
     "prettier/@typescript-eslint",
+    "plugin:tailwind/recommended",
   ],
   rules: {
     "no-console": ["error", { allow: ["warn", "info", "error"] }],

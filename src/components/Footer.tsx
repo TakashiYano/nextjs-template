@@ -37,7 +37,7 @@ export const Footer = () => {
         </ul>
         <div className="mt-6">
           <small className="dark:text-white" lang="en">
-            copyright SHERE All Rights Reserved
+            copyright LOGO All Rights Reserved
           </small>
         </div>
       </div>

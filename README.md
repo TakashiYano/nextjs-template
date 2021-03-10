@@ -22,10 +22,10 @@
 コマンドで行う場合
 
 ```
-git clone https://github.com/TakashiYano/nextjs-tailwindcss-typescript.git
+git clone https://github.com/TakashiYano/nextjs-template.git
 ```
 
-VS Code で行う場合は、リポジトリをクローンする（英語だと Clone Repository）というボタンがあるので、それをクリックして、`https://github.com/TakashiYano/nextjs-tailwindcss-typescript.git` を入力してエンターを押す。
+VS Code で行う場合は、リポジトリをクローンする（英語だと Clone Repository）というボタンがあるので、それをクリックして、`https://github.com/TakashiYano/nextjs-template.git` を入力してエンターを押す。
 
 ### 依存関係のインストール
 
